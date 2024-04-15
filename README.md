@@ -5,4 +5,5 @@ Proiect Software in Echipa - PABD2024
 3. Catalin Bera
 4. Bagrin Antonina
 5. Toma Sergiu
+6. Topala Nicolae
 Neagu Cristian
