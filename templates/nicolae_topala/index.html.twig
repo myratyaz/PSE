@@ -10,17 +10,28 @@
 {% block body %}
     <body class="content-page">    
         <div class="content-element">
-            <img src="{{ asset('images/nicolae_topala.jpg') }}" alt="Nicola Topala's beatiful face" class="personal-image">
+            <img src="{{ asset('images/nicolae_topala.jpg') }}" alt="Nicola Topala's beautiful face" class="personal-image">
             <div class="content-text">
                 <p>Role: Student</p>
                 <p>Studying at "1 decembrie 1918" University of Alba Iulia, currently in the second year of the master's degree. Preferred programming language is C#.</p>
-                <p>List of favorit things</p>
+                <p>List of favorite things</p>
                 <ul>
-                    <li>Cats</li>
-                    <li>Videos games</li>
-                    <li>The payday</li>
-                    <li>Increases</li>
+                {% if favoriteThings %}
+                    {% for favoriteThing in favoriteThings %}
+                        <li>{{ favoriteThing.name }}</li>
+                    {% endfor %}
+                {% endif %}
                 </ul>
+                {% if isLogged %}
+                    <form method="post" action="{{ path('nicolae_topala_add_favorite_thing') }}">
+                        <label for="name">Favorite thing name:</label>
+                        <input type="text" id="name" name="name">
+                        </br>
+                        <button type="submit">Add new item</button>
+                    </form>
+                {% else %}
+                    {{ include('nicolae_topala/login_form/index.html.twig', { error: error|default(null) }) }}
+                {% endif %}
             <div>
         </div>
     </body>

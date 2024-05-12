@@ -1,0 +1,3 @@
+php bin/console make:entity - to create entity
+php bin/console make:migration - to create migration
+php bin/console doctrine:migrations:migrate - run migration
