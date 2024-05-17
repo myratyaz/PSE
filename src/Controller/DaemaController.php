@@ -21,13 +21,24 @@ class DaemaController extends AbstractController
         return $this->render('daema/login.html.twig');
     }
     
-    #[Route('/daema-home')]
+    #[Route('/daema-home', name:'daema_home')]
     public function home(ServiceRepository $serviceRepository): Response
     {
         // Fetch all services from db
         $services = $serviceRepository->findAll();
 
         return $this->render('daema/home.html.twig',[
+            'services' => $services,
+        ]);
+    }
+    
+    #[Route('/daema-dashboard', name: 'daema_dashboard')]
+    public function dashboard(ServiceRepository $serviceRepository): Response
+    {
+        // Fetch all services from db
+        $services = $serviceRepository->findAll();
+
+        return $this->render('daema/dashboard.html.twig',[
             'services' => $services,
         ]);
     }
