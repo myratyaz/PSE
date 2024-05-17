@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/daema/custom.css')}}">
+    <link rel="stylesheet" href="{{ asset('styles/daema/login.css')}}">
+{% endblock %}
+
+{% block body %}
+    <header>
+            <div class="logo">
+                <img src="{{ asset('images/daema/logo.png') }}" alt="">
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">My Work</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <!-- Introduction -->
+        <section class="intro" id="home">
+            <h1 class="section__title section__title--intro font-sans text-5xl">
+                Hi, I am <strong>Daniel Rad</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro font-mono">web developer</p>
+            <img src="{{ asset('images/daema/daniel-01.jpg') }}" alt="image of me" class="intro__img">
+        </section>
+        
+        
+        <!-- My services -->
+        <section class="my-services" id="services" style= "background-image: url({{ asset('images/daema/services-bg.jpg') }})">
+            <h2 class="section__title section__title--services font-bold text-5xl">What I do</h2>
+            <div class="services">
+            {% for service in services %}
+                <div class="service">
+                    <h3 class="font-bold text-2xl">{{ service.title }}</h3>
+                    <p>{{ service.content }}</p>
+                </div> <!-- / service -->
+            {% endfor %}
+                {# <div class="service">
+                    <h3 class="font-bold text-2xl">Design + Development</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div> <!-- / service -->
+                
+                <div class="service">
+                    <h3 class="font-bold text-2xl">E-Commerce</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div> <!-- / service -->
+                
+                <div class="service">
+                    <h3 class="font-bold text-2xl">WordPress</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div> <!-- / service --> #}
+            </div> <!-- / services -->
+            
+            <div class="flex justify-center mb-6">
+                <a href="{{ path('app_service') }}" class="btn w-auto font-normal text-black bg-[#7ddf2b] hover:bg-[#72cc28]"> Edit Profile</a>
+            </div>
+        </section>
+{% endblock %}
