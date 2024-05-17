@@ -7,7 +7,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class CatalinBeraPageController extends AbstractController
 {
-    #[Route('../catalin-bera', name: 'catalin-bera')]
+    #[Route('/catalin-bera', name: 'catalin-bera')]
     public function index(): Response
     {
     return $this->render('catalin-bera/catalin-bera.html.twig', [
