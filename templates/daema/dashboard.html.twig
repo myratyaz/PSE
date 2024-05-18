@@ -8,8 +8,11 @@
     <header class="bg-gray-800 text-white p-4 flex justify-between items-center">
         <div class="max-w-28"><img src="{{ asset('images/daema/logo-invert.png') }}" alt=""></div>
         <div>
-            Logged in as Daema
-            {# Logged in as: <strong>{{ app.user.username }}</strong> #}
+            {% if app.user %}
+                <div class="mb-3">
+                    You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('daema_logout') }}">Logout</a>
+                </div>
+            {% endif %}
         </div>
     </header>
     
@@ -27,7 +30,7 @@
         <!-- Title and Add Button -->
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-2xl font-bold">Services</h2>
-            <a href="{{ path('service_add') }}" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Add Service</a>
+            <a href="{{ path('daema_service_add') }}" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Add Service</a>
         </div>
         
         <!-- Table -->
@@ -46,8 +49,8 @@
                             <td class="py-2 px-4 border-r">{{ service.title }}</td>
                             <td class="py-2 px-4 border-r">{{ service.content }}</td>
                             <td class="py-2 px-4 flex space-x-2">
-                                <a href="{{ path('service_edit', {'id': service.id}) }}" class="bg-yellow-500 text-white py-1 px-3 rounded hover:bg-yellow-600">Edit</a>
-                                <form action="{{ path('service_delete', {'id': service.id}) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this service?');">
+                                <a href="{{ path('daema_service_edit', {'id': service.id}) }}" class="bg-yellow-500 text-white py-1 px-3 rounded hover:bg-yellow-600">Edit</a>
+                                <form action="{{ path('daema_service_delete', {'id': service.id}) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this service?');">
                                     <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ service.id) }}">
                                     <button type="submit" class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600">Delete</button>
                                 </form>
