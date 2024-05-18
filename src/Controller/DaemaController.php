@@ -2,10 +2,15 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Repository\ServiceRepository;
+use App\Form\RegistrationFormType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class DaemaController extends AbstractController
 {
@@ -40,6 +45,35 @@ class DaemaController extends AbstractController
 
         return $this->render('daema/dashboard.html.twig',[
             'services' => $services,
+        ]);
+    }
+
+    #[Route('/register', name: 'app_register')]
+    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $em): Response
+    {
+        $user = new User();
+        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // encode the plain password
+            $user->setPassword(
+                    $userPasswordHasher->hashPassword(
+                    $user,
+                    $form->get('plainPassword')->getData()
+                )
+            );
+
+            $em->persist($user);
+            $em->flush();
+
+            // do anything else you need here, like send an email
+
+            return $this->redirectToRoute('daema_dashboard');
+        }
+
+        return $this->render('daema/register.html.twig', [
+            'registrationForm' => $form,
         ]);
     }
 }
