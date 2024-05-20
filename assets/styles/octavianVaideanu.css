@@ -4,7 +4,7 @@ body {
   background-color: #8c92ac;
 }
 
-.page {
+.page, .edit{
   background-color: #e7f2ff;
   color: #333;
   font-family: 'Open Sans', sans-serif;
@@ -20,4 +20,28 @@ body {
   float: right;
   margin-left: 5%;
   border-radius: 5%;
+}
+
+.clear {
+  clear: both;
+}
+
+.edit .imageContainer {
+  float: left;
+  width: 45%;
+  margin-right: 5%;
+}
+
+.edit .textarea {
+  float: left;
+  width: 45%;
+  margin-left: 5%;
+}
+
+.edit .textarea textarea {
+  width: 100%;
+}
+
+.edit .imageContainer img {
+  width: 100%;
 }
