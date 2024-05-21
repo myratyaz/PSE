@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Service{% endblock %}
+
+{% block body %}
+<div class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-gray-800 text-white p-4 flex justify-between items-center">
+        <h1 class="text-xl font-bold">Add Service</h1>
+        <div>
+            Logged in as Daema
+            {# Logged in as: <strong>{{ app.user.username }}</strong> #}
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="bg-gray-200 p-4">
+        <ol class="flex space-x-2">
+            <li><a href="{{ path('daema_dashboard') }}" class="text-blue-600">Dashboard</a></li>
+            <li>/</li>
+            <li><span class="text-gray-500">Add Service</span></li>
+        </ol>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow p-4">
+        <h2 class="text-2xl font-bold mb-4">New Service</h2>
+        {{ form_start(form) }}
+            <div class="mb-4">
+                {{ form_label(form.title) }}
+                {{ form_widget(form.title, { 'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'} }) }}
+                {{ form_errors(form.title) }}
+            </div>
+            <div class="mb-4">
+                {{ form_label(form.content) }}
+                {{ form_widget(form.content, { 'attr': {'class': 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'} }) }}
+                {{ form_errors(form.content) }}
+            </div>
+            <div>
+                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">Add Service</button>
+            </div>
+        {{ form_end(form) }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        &copy; 2024 Your Company. All rights reserved.
+    </footer>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding:0;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+ .content-wrap {
+   padding: 16px;
+   background: rgb(229, 300, 235);
+
+ }
+.title{
+   color: lightgreen;
+   margin-left: 25%;
+   font-style: normal;
+   font-weight: bold;
+}
+ h2{
+   font-style: bold;
+   font-size: 50px;
+ }
+
+
+ .content-wrap > img {
+   display: block;
+   width: 25%;
+   float: right;
+}
+
+
+ .content {
+    float: left;
+    width: 50%;
+    padding-left: 20px;
+ }
+
+ .content p:first-child {
+    margin-top: 0;;
+ }
+
+ .clear {
+    clear: both;
+ }

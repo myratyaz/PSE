@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create dynamic page{% endblock %}
+
+{% block body %}
+<style>
+    
+</style>
+
+<div class="example-wrapper">
+    <h1>Login</h1>
+
+    {% for message in app.flashes('error') %}
+        <div class="errors">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <form method="post" action="" enctype="multipart/form-data">
+        <label>Username</label>
+        <input name="user" type="text" value="" />
+
+        <label>Password</label>
+        <input name="password" type="password" value="" />
+
+
+        <input type="submit" value="Login">
+    </form>
+
+</div>
+{% endblock %}

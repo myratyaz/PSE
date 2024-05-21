@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Create dynamic page{% endblock %}
+
+{% block stylesheets %}
+     <link rel="stylesheet" href="{{ asset('styles/octavianVaideanu.css') }}">
+ {% endblock %}
+
+{% block body %}
+
+<div class="edit">
+    <h1>Edit dynamic page</h1>
+    <div class=""><a href="{{ path('app_octavian_vaideanu_dynamic_page') }}">View Page</a></div><br>
+
+    <form method="post" action="" enctype="multipart/form-data">
+
+        <div class="input-container">
+            <label>Title</label>
+            <input name="title" type="text" value="{{ page.getTitle() }}" />
+            <br><br>
+        </di>
+
+        
+        <div class="input-container imageContainer">
+            <label>image</label><br>
+            <img src="{{ asset('images/' ~ page.photo ) }}" alt="octavian_vaideanu" class="profile-picture"><br>
+            <input name="image" type="file" />
+            <br><br>
+        </div>
+
+        <div class="input-container textarea">
+            <label>Description</label><br>
+            <textarea rows="30" cols="100" name="description">{{ page.getDescription() }}</textarea>
+            <br><br>
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="input-container">
+            <input type="submit" value="Salveaza">
+        </div>
+    </form>
+
+</div>
+{% endblock %}
