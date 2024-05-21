@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pagina Personala Rad Daniel{% endblock %}
+
+{% block body %}
+<div class="container mx-auto p-4 bg-gray-100">
+    <h1 class="text-2xl font-bold">Rad Daniel</h1>
+    <div class="flex items-start">
+        <img src="{{ asset('images/daema/daniel-01.jpg') }}" alt="Personal Image" class="w-56 mr-4 rounded-lg">
+        <div>
+            <p class="mb-4">Paragraf 1 despre mine.</p>
+            <p class="mb-4">Paragraf 2 despre mine.</p>
+            <p class="mb-4">Paragraf 3 despre mine.</p>
+        </div>
+    </div>
+    <ul class="list-disc ml-5 mt-4">
+        <li>Punct 1</li>
+        <li>Punct 2</li>
+        <li>Punct 3</li>
+    </ul>
+</div>
+{% endblock %}
