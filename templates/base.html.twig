@@ -12,6 +12,36 @@
         {% endblock %}
     </head>
     <body>
+        <div class="container relative">
+            {% for label, messages in app.flashes %}
+                {% set alertClass = 
+                    label == 'success' ? 'bg-green-500' : 
+                    label == 'error' ? 'bg-red-500' : '' 
+                %}
+                <div id="flash-messages" class="fixed bottom-16 right-4 z-50">
+                    {% for message in messages %}
+                        <div class="rounded-md shadow-md p-4 text-white {{ alertClass }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
         {% block body %}{% endblock %}
+        <script>
+            document.addEventListener("turbo:load", function() {
+                console.log("Turbo load event fired");
+                var flashMessages = document.getElementById('flash-messages');
+                if (flashMessages) {
+                    console.log("Flash messages found:", flashMessages);
+                    setTimeout(function() {
+                        console.log("Removing flash messages...");
+                        flashMessages.remove();
+                    }, 3000); // Adjust the time (in milliseconds) as needed
+                } else {
+                    console.log("Flash messages not found");
+                }
+            });
+        </script>
     </body>
 </html>

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+ {% block title %}{{ page.title }}{% endblock %}
+
+ {% block stylesheets %}
+     <link rel="stylesheet" href="{{ asset('styles/octavianVaideanu.css') }}">
+ {% endblock %}
+
+ {% block body %}  
+    <div class="page">
+        <h1>{{ page.title }}</h1>
+        <div class=""><a href="{{ path('app_octavian_vaideanu_dynamic_page_edit') }}">Edit Page</a></div>
+        <img src="{{ asset('images/' ~ page.photo ) }}" alt="octavian_vaideanu" class="profile-picture">
+        <div class="content">
+            {{ page.description }}
+        </div>
+        <div class="clear"></div>
+    </div>
+ {% endblock %}

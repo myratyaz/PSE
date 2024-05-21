@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+
+ {% block title %} Catalin Bera {% endblock %}
+
+ {% block stylesheets %}
+     <link rel="stylesheet" href="{{ asset('styles/catalin-bera/catalin-bera.css') }}">
+ {% endblock %}
+
+ {% block body %}  
+    <div class="content-wrap">
+        <h1 class="title">Catalin Bera</h1>
+        <img src="{{ asset('images/catalin-bera.jpg') }}" alt="catalin bera" class="profile-picture">
+        <div class="content">
+            <p>Salut! Numele meu este Catalin Bera, student la PABD anul 2. Pasionat de Tehnologie si Gaming.</p>
+            <h2>Hobby-urile mele: </h2>
+            <ul>
+                <li>Calatoria.</li>
+                <li>Ski.</li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+ {% endblock %}
