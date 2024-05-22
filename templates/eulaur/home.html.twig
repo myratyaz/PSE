@@ -1,8 +1,9 @@
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset('styles/eulaur/style.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 {% endblock %}
 <body>
-    <a class = "left" href = "{{ path('eulaur_dashboard') }}">Edit</a>
+    <a class = "edit-button left" href = "{{ path('eulaur_dashboard') }}">Edit</a>
     <div class = "big-container">
         
         <img class = "profile-image" src = "{{ asset('images/eulaur/profile.png') }}">
@@ -17,6 +18,10 @@
         {% endfor %}
         </ul>
     </div>
-        <p class = "description mid">aaaaaaaaaaaaaaaaa</p>
+        <p class = "description mid">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis finibus est, nec convallis lorem. Phasellus et ultricies tellus. Morbi auctor sollicitudin egestas. Ut congue turpis at nisi consequat ultricies. Aliquam sed iaculis nisi, id malesuada sem. Cras placerat molestie felis id porttitor. Phasellus placerat tincidunt orci, ac sodales nisi. Duis porta justo in congue sagittis. Proin ut bibendum ante, a volutpat elit.
+
+            Cras tellus diam, malesuada eleifend elit a, faucibus commodo sapien. Pellentesque ac lacinia lorem, id lacinia quam. Vestibulum convallis odio sem, et placerat nulla blandit sit amet. Aliquam sed elit in leo egestas viverra. Donec convallis mi in euismod tincidunt. Duis congue metus nec quam consectetur, ac porttitor urna laoreet. Proin molestie vulputate volutpat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam non commodo elit. Maecenas eu interdum elit. Cras in lorem ipsum. Donec dapibus tortor congue, tristique erat at, aliquet enim. Ut posuere accumsan leo. Cras volutpat ipsum et ex fermentum luctus. In ultrices suscipit arcu, eu rutrum magna sagittis eu.
+        </p>
     <div>
 </body>

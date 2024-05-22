@@ -78,6 +78,6 @@ class EuLaurController extends AbstractController
         $hobby->setTitle($value);
         $entityManager->flush();
 
-        return $this->redirectToRoute("eulaur");
+        return $this->redirectToRoute("eulaur_dashboard");
     }
 }

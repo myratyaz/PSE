@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="{{ asset('styles/eulaur/dashboard.css')}}">
 </head>
 <body>
+    <a class = "edit-button left" href = "{{ path('eulaur') }}">Home</a>
     <div class="container">
-        <h1>Text Fields Dashboard</h1>
+        <h1>Dashboard</h1>
         
         {% for hobby in data %}
             <form action="{{ path('hobby_update',{'id':hobby.id}) }}" method="post">
@@ -20,7 +21,5 @@
          {% endfor %}
     </div>
     <a href = "{{ path('eulaur_logout')}}">Logout</a>
-    
-    <script src="scripts.js"></script>
 </body>
 </html>
