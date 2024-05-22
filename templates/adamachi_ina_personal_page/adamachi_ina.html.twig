@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Personal Page{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/adamachi/adamachi.css') }}">
+{% endblock %}
+
+
+{% block body %}
+    <h1> Personal Page </h1>
+    <img src="{{asset('images/adamachi/base.png')}}" alt="Profile picture">
+    <p> Some random text for the static page. <p>
+{% endblock %}
