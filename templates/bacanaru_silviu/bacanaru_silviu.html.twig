@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="stylesheet" href="{{ asset('styles/bacanaru_silviu/bacanaru_silviu.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div id="login-page" class="form-page">
+            <h1>Bine ai venit pe blogul meu!</h1>
+            <h2>Te rog sa te autentifici pentru a vedea continutul 🚀</h2>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Parola:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" class="animated-button">Conectare</button>
+                <p id="error-message"></p>
+                <span>Credențiale: "test"</span>
+            </form>
+        </div>
+        <div id="blog-page" class="blog-page" style="display: none;">
+            <div class="tabs">
+                <button class="tab-button" data-tab="tech">Tehnologie</button>
+                <button class="tab-button" data-tab="fashion">Modă</button>
+                <button class="tab-button" data-tab="sports">Sport</button>
+            </div>
+            <div id="tech" class="tab-content active">
+                <h2>Postări despre tehnologie</h2>
+                <div class="posts" id="tech-posts">
+                </div>
+                <form id="tech-post-form" class="post-form">
+                    <h3>Adaugă o postare nouă</h3>
+                    <input type="text" id="tech-post-title" placeholder="Titlu postare" required>
+                    <input type="text" id="tech-post-image" placeholder="Link" required>
+                    <textarea id="tech-post-content" placeholder="Conținut postare" required></textarea>
+                    <button type="submit" class="animated-button">Adaugă postarea</button>
+                </form>
+            </div>
+            <div id="fashion" class="tab-content">
+                <h2>Postări despre modă</h2>
+                <div class="posts" id="fashion-posts">
+                </div>
+                <form id="fashion-post-form" class="post-form">
+                    <h3>Adaugă o postare nouă</h3>
+                    <input type="text" id="fashion-post-title" placeholder="Titlu postare" required>
+                    <input type="text" id="fashion-post-image" placeholder="Link" required>
+                    <textarea id="fashion-post-content" placeholder="Conținut postare" required></textarea>
+                    <button type="submit" class="animated-button">Adaugă postarea</button>
+                </form>
+            </div>
+            <div id="sports" class="tab-content">
+                <h2>Postări despre sport</h2>
+                <div class="posts" id="sports-posts">
+                </div>
+                <form id="sports-post-form" class="post-form">
+                    <h3>Adaugă o postare nouă</h3>
+                    <input type="text" id="sports-post-title" placeholder="Titlu" required>
+                    <input type="text" id="sports-post-image" placeholder="Link imagine" required>
+                    <textarea id="sports-post-content" placeholder="Conținut" required></textarea>
+                    <button type="submit" class="animated-button">Adaugă postarea</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="{{asset('styles/bacanaru_silviu/bacanaru_silviu.js')}}"></script>
+</body>
+</html>
