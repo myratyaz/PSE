@@ -13,8 +13,19 @@ use Symfony\Component\HttpFoundation\Request;
 class EuLaurController extends AbstractController
 {
     #[Route('/eulaur', name: 'eulaur')]
-    public function home(HobbyRepository $repo): Response
+    public function home(HobbyRepository $repo, EntityManagerInterface $manager): Response
     {
+
+        $data = $repo->findAll(); 
+        if(!$data){
+            $default_data = ["Profesor","Programator Competitiv","Chitara"];
+            foreach($default_data as $hobby){
+                $h = new Hobby();
+                $h->setTitle($hobby);
+                $manager->persist($h);
+            }
+            $manager->flush();
+        }
         $data = $repo->findAll(); 
         return $this->render('eulaur/home.html.twig',["data"=>$data]);
     }
