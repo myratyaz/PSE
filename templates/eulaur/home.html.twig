@@ -2,14 +2,21 @@
     <link rel="stylesheet" href="{{ asset('styles/eulaur/style.css')}}">
 {% endblock %}
 <body>
+    <a class = "left" href = "{{ path('eulaur_dashboard') }}">Edit</a>
     <div class = "big-container">
-        <img class = "profile-image mid" src = "{{ asset('images/eulaur/profile.png') }}">
+        
+        <img class = "profile-image" src = "{{ asset('images/eulaur/profile.png') }}">
         <h1 class = "mid">Maties Laurentiu</h1>
-        <div class = "hobbies-div mid">
-            <h2 class = "hobby">h1</h2>
-            <h2 class = "hobby">h2</h2>
-            <h2 class = "hobby">h3</h2>
-        </div>
+        <div class="hobbies-div mid">
+        <ul class="hobbies-list">
+        {% for hobby in data %}
+            <li class="hobby">
+                <span class="hobby-icon">🏅</span> <!-- Example icon, you can use different ones or images -->
+                <span class="hobby-title">{{ hobby.title }}</span>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
         <p class = "description mid">aaaaaaaaaaaaaaaaa</p>
     <div>
 </body>

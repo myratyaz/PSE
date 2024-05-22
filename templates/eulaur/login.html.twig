@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Fields Dashboard</title>
+    <link rel="stylesheet" href="{{ asset('styles/eulaur/dashboard.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Fields Dashboard</h1>
+            <form action = "{{path('eulaur_login')}}" method="post">
+                <div class="input-container">
+                    <label>Username</label>
+                    <input type="text" name = "username" id="titleField" value = "">
+                    <label>Password</label>
+                    <input type="password" name = "password" id="titleField" value = "">
+                    <input type="submit" value = "Login">
+                </div>
+            </form>
+    </div>
+</body>
+</html>
+

@@ -1,5 +1,18 @@
+body{
+    background-image: url("../../images/eulaur/bg.png");
+    background-repeat: no-repeat;
+  background-size: cover;
+}
+
 h1{
     color: red;
+}
+
+.profile-image{
+    width : 25%;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mid{
@@ -17,4 +30,43 @@ h1{
 .hobbies-div{
     display: flex;
     justify-content: center;
+}
+.left{
+    max-width: fit-content;
+    margin-left: 95%;
+}
+
+.hobbies-list {
+    list-style-type: none; /* Remove default list style */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: center; /* Center the items horizontally */
+    flex-wrap: wrap; /* Allow wrapping to new lines if there are many items */
+}
+
+.hobby {
+    background-color: #f0f0f0; /* Light gray background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 15px; /* Inner padding for items */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center align items vertically */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effect */
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.hobby:hover {
+    background-color: #e0e0e0; /* Slightly darker background on hover */
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.hobby-icon {
+    font-size: 1.5em; /* Larger icon size */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.hobby-title {
+    font-weight: bold; /* Bold text for titles */
+    color: #333; /* Darker text color */
 }

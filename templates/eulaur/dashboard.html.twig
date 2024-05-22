@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Fields Dashboard</title>
+    <link rel="stylesheet" href="{{ asset('styles/eulaur/dashboard.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h1>Text Fields Dashboard</h1>
+        
+        {% for hobby in data %}
+            <form action="{{ path('hobby_update',{'id':hobby.id}) }}" method="post">
+                <div class="input-container">
+                    <input type="text" name = "title" id="titleField" value = "{{hobby.title}}">
+                    <input type = "submit" value="Edit"></input>
+                </div>
+            </form>
+         {% endfor %}
+    </div>
+    <a href = "{{ path('eulaur_logout')}}">Logout</a>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
