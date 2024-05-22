@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "main_conect",
+            "database": "pse_db",
+            "username": "root"
+        }
+    ],
+    "php.suggest.basic": true,
+    "php.validate.enable": false
+}
