@@ -2,17 +2,14 @@
 namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Route;
+use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class EuLaurController
+class EuLaurController extends AbstractController
 {
-    #[Route('/eulaur')]
+    #[Route('/eulaur', name: 'eulaur')]
     public function home(): Response
     {
-        //return $this->render('eulaur/home.html.twig');
-        return new Response(
-            'aaaaaaaa'
-        );
+        return $this->render('eulaur/home.html.twig');
     }
 }
