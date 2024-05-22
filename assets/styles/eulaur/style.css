@@ -1,0 +1,20 @@
+h1{
+    color: red;
+}
+
+.mid{
+    max-width: fit-content;
+    margin-inline: auto;
+}
+
+.big-container{
+    border : 5px solid black;
+    margin-top: 5%;
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
+.hobbies-div{
+    display: flex;
+    justify-content: center;
+}
