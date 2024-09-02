@@ -10,3 +10,4 @@ Proiect Software in Echipa - PABD2024
 8. Vaideanu Cornel
 9. Băcănaru Silviu-Constantin
 10. Grozavescu Claudia
+11.Tampanariu Tiberius
