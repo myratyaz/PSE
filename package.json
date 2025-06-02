@@ -1,0 +1,15 @@
+{
+  "name": "pse",
+  "version": "1.0.0",
+  "description": "Proiect Software in Echipa - PABD2024",
+  "main": "tailwind.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
